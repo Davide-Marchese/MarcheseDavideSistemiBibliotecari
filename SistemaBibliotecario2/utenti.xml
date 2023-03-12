@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<utenti xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="utenti.xsd">
+    <utente>
+        <nome>Mario</nome>
+        <cognome>Rossi</cognome>
+        <dataNascita>1978-11-08</dataNascita>
+        <luogoNascita>Roma</luogoNascita>
+        <codiceFiscale>RSSMRA78S08H501E</codiceFiscale>
+    </utente>
+    <utente>
+        <nome>Alberto</nome>
+        <cognome>Verdi</cognome>
+        <dataNascita>1987-03-14</dataNascita>
+        <luogoNascita>Genova</luogoNascita>
+        <partitaIva>86334519757</partitaIva>
+    </utente>
+    <utente>
+        <nome>Paolo</nome>
+        <cognome>Conti</cognome>
+        <dataNascita>1994-12-30</dataNascita>
+        <luogoNascita>Rovigo</luogoNascita>
+        <codiceFiscale>CNTPLA94T30H620P</codiceFiscale>
+    </utente>
+</utenti>

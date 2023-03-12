@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<biblioteche xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="biblioteche.xsd">
+    <biblioteca>
+        <nome>Biblioteca 1</nome>
+        <sede>Vicenza</sede>
+        <fondazione>1987-08-22</fondazione>
+    </biblioteca>
+    <biblioteca>
+        <nome>Biblioteca 2</nome>
+        <sede>Verona</sede>
+        <fondazione>1947-03-19</fondazione>
+    </biblioteca>
+    <biblioteca>
+        <nome>Biblioteca 3</nome>
+        <sede>Padova</sede>
+        <fondazione>1990-11-22</fondazione>
+    </biblioteca>
+</biblioteche>

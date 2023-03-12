@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="libri">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="libro" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ISBN">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:length value="13"></xs:length>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="titolo" type="xs:string"></xs:element>
+                            <xs:element name="autori">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="autore" minOccurs="1"
+                                            maxOccurs="unbounded"
+                                            type="xs:string"></xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="casaEditrice">
+                                <xs:complexType>
+                                    <xs:simpleContent>
+                                        <xs:extension base="xs:string"></xs:extension>
+                                    </xs:simpleContent>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="dataPubblicazione" type="xs:date"></xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:integer" use="required"></xs:attribute>
+                        <xs:attribute name="biblioteca" type="xs:string" use="required"></xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

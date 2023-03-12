@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libri xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="libri.xsd">
+    <libro id="1" biblioteca="Biblioteca 1">
+        <ISBN>9780582461468</ISBN>
+        <titolo>Uomini e topi</titolo>
+        <autori>
+            <autore>J. Steinbeck</autore>
+        </autori>
+        <casaEditrice>Bompiani</casaEditrice>
+        <dataPubblicazione>1937-11-23</dataPubblicazione>
+    </libro>
+    <libro id="2" biblioteca="Biblioteca 2">
+        <ISBN>9780582461468</ISBN>
+        <titolo>Uomini e topi</titolo>
+        <autori>
+            <autore>J. Steinbeck</autore>
+        </autori>
+        <casaEditrice>Bompiani</casaEditrice>
+        <dataPubblicazione>1937-11-23</dataPubblicazione>
+    </libro>
+    <libro id="3" biblioteca="Biblioteca 2">
+        <ISBN>9780151660346</ISBN>
+        <titolo>1984</titolo>
+        <autori>
+            <autore>G. Orwell</autore>
+        </autori>
+        <casaEditrice>Einaudi</casaEditrice>
+        <dataPubblicazione>1949-06-08</dataPubblicazione>
+    </libro>
+    <libro id="4" biblioteca="Biblioteca 3">
+        <ISBN>9780582434479</ISBN>
+        <titolo>La fattoria degli animali</titolo>
+        <autori>
+            <autore>G. Orwell</autore>
+        </autori>
+        <casaEditrice>Einaudi</casaEditrice>
+        <dataPubblicazione>1945-08-17</dataPubblicazione>
+    </libro>
+    <libro id="5" biblioteca="Biblioteca 1">
+        <ISBN>9783498038083</ISBN>
+        <titolo>Il buio oltre la siepe</titolo>
+        <autori>
+            <autore>H. Lee</autore>
+        </autori>
+        <casaEditrice>Feltrinelli</casaEditrice>
+        <dataPubblicazione>1960-07-11</dataPubblicazione>
+    </libro>
+    <libro id="6" biblioteca="Biblioteca 1">
+        <ISBN>9783498038083</ISBN>
+        <titolo>Il buio oltre la siepe</titolo>
+        <autori>
+            <autore>H. Lee</autore>
+        </autori>
+        <casaEditrice>Feltrinelli</casaEditrice>
+        <dataPubblicazione>1960-07-11</dataPubblicazione>
+    </libro>
+</libri>

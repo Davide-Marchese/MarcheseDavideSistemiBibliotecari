@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="utenti">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="utente" minOccurs="0" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nome" type="xs:string"></xs:element>
+                            <xs:element name="cognome" type="xs:string"></xs:element>
+                            <xs:element name="dataNascita" type="xs:date"></xs:element>
+                            <xs:element name="luogoNascita" type="xs:string"></xs:element>
+                            <xs:choice>
+                                <xs:element name="codiceFiscale">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:length value="16"></xs:length>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                                <xs:element name="partitaIva">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:length value="11"></xs:length>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+                            </xs:choice>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
