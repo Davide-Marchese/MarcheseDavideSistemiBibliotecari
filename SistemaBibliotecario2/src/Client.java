@@ -16,5 +16,10 @@ public class Client {
         BufferedReader in = new BufferedReader(new InputStreamReader(server.getInputStream()));
         PrintWriter out = new PrintWriter(server.getOutputStream(), true);
         out.println(search());
+        String prestito = "";
+        while (!prestito.equals("-")) {
+            prestito = in.readLine();
+            System.out.println(prestito);
+        }
     }
 }

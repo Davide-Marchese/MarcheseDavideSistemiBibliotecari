@@ -29,10 +29,11 @@ public class ClientHandler extends Thread {
 
     public void validation(String libro) {
         try {
-            validationCases("biblioteche.xml", "biblioteche.xsd");
-            validationCases("libri.xml", "libri.xsd");
-            validationCases("prestiti.xml", "prestiti.xsd");
-            validationCases("utenti.xml", "utenti.xsd");
+            String[] paths = { "biblioteche.xml", "biblioteche.xsd", "libri.xml", "libri.xsd", "prestiti.xml",
+                    "prestiti.xsd", "utenti.xml", "utenti.xsd" };
+            for (int i = 0; i < paths.length; i += 2) {
+                validationCases(paths[i], paths[i + 1]);
+            }
             search(libro);
         } catch (SAXException | IOException e) {
             System.out.println("Documenti non validi");
@@ -45,7 +46,7 @@ public class ClientHandler extends Thread {
             Element prestito = ((Element) listaPrestiti.item(i));
             if (prestito.getElementsByTagName("id_libro").item(0).getTextContent().equals(id)) {
                 String inizio = prestito.getElementsByTagName("inizio").item(0).getTextContent();
-                String fine = "...";
+                String fine = "...\t";
                 String idCopia = prestito.getElementsByTagName("id_libro").item(0).getTextContent();
                 if (prestito.getElementsByTagName("fine").item(0) != null) {
                     fine = prestito.getElementsByTagName("fine").item(0).getTextContent();
@@ -59,6 +60,9 @@ public class ClientHandler extends Thread {
                 System.out.println("Prestito " + (i + 1) + "\n\tId copia: " + idCopia + "\n\tInizio: " + inizio
                         + "\n\tFine: " + fine
                         + "\n\tIdentificativo: " + identificativo);
+                out.println("Prestito " + (i + 1) + "\tId copia: " + idCopia + "\tInizio: " + inizio
+                        + "\tFine: " + fine
+                        + "\tIdentificativo: " + identificativo);
             }
         }
     }
@@ -74,6 +78,7 @@ public class ClientHandler extends Thread {
                 borrowings(listaPrestiti, id);
             }
         }
+        out.println("-");
     }
 
     public void search(String libro) {
