@@ -1,16 +1,10 @@
 import java.net.*;
 
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
+import org.w3c.dom.*;
 
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.*;
 import javax.xml.transform.stream.StreamSource;
-import javax.xml.validation.Schema;
-import javax.xml.validation.SchemaFactory;
-import javax.xml.validation.Validator;
+import javax.xml.validation.*;
 
 import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
@@ -26,16 +20,19 @@ public class ClientHandler extends Thread {
         this.client = client;
     }
 
-    public void validation(String libro) {
+    public void validationCases(String documentPath, String schemaPath) throws SAXException, IOException {
         SchemaFactory factory = SchemaFactory.newInstance("http://www.w3.org/2001/XMLSchema");
+        Schema schema = factory.newSchema(new File(schemaPath));
+        Validator validator = schema.newValidator();
+        validator.validate(new StreamSource(documentPath));
+    }
+
+    public void validation(String libro) {
         try {
-            Schema schema = factory.newSchema(new File("prestiti.xsd"));
-            Validator validator = schema.newValidator();
-            validator.validate(new StreamSource("prestiti.xml"));
-            schema = factory.newSchema(new File("libri.xsd"));
-            validator = schema.newValidator();
-            validator.validate(new StreamSource("libri.xml"));
-            System.out.println("Documenti validi");
+            validationCases("biblioteche.xml", "biblioteche.xsd");
+            validationCases("libri.xml", "libri.xsd");
+            validationCases("prestiti.xml", "prestiti.xsd");
+            validationCases("utenti.xml", "utenti.xsd");
             search(libro);
         } catch (SAXException | IOException e) {
             System.out.println("Documenti non validi");
@@ -49,10 +46,19 @@ public class ClientHandler extends Thread {
             if (prestito.getElementsByTagName("id_libro").item(0).getTextContent().equals(id)) {
                 String inizio = prestito.getElementsByTagName("inizio").item(0).getTextContent();
                 String fine = "...";
+                String idCopia = prestito.getElementsByTagName("id_libro").item(0).getTextContent();
                 if (prestito.getElementsByTagName("fine").item(0) != null) {
                     fine = prestito.getElementsByTagName("fine").item(0).getTextContent();
                 }
-                System.out.println("Prestito " + (i + 1) + "\n\tInizio: " + inizio + "\n\tFine: " + fine);
+                String identificativo = "";
+                if (prestito.getElementsByTagName("partitaIva").item(0) != null) {
+                    identificativo = prestito.getElementsByTagName("partitaIva").item(0).getTextContent();
+                } else {
+                    identificativo = prestito.getElementsByTagName("codiceFiscale").item(0).getTextContent();
+                }
+                System.out.println("Prestito " + (i + 1) + "\n\tId copia: " + idCopia + "\n\tInizio: " + inizio
+                        + "\n\tFine: " + fine
+                        + "\n\tIdentificativo: " + identificativo);
             }
         }
     }
