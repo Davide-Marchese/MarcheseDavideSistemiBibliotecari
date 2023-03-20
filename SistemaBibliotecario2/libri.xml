@@ -55,4 +55,13 @@
         <casaEditrice>Feltrinelli</casaEditrice>
         <dataPubblicazione>1960-07-11</dataPubblicazione>
     </libro>
+    <libro id="7" biblioteca="Biblioteca 1">
+        <ISBN>9783498038083</ISBN>
+        <titolo>Il buio oltre la siepe</titolo>
+        <autori>
+            <autore>H. Lee</autore>
+        </autori>
+        <casaEditrice>Feltrinelli</casaEditrice>
+        <dataPubblicazione>1960-07-11</dataPubblicazione>
+    </libro>
 </libri>

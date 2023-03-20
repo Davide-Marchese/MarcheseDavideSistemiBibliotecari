@@ -35,4 +35,16 @@
         <inizio>2022-12-02</inizio>
         <fine>2022-12-20</fine>
     </prestito>
+    <prestito>
+        <codiceFiscale>RSSMRA78S08H501E</codiceFiscale>
+        <id_libro>7</id_libro>
+        <inizio>2023-01-15</inizio>
+        <fine>2023-02-01</fine>
+    </prestito>
+    <prestito>
+        <codiceFiscale>CNTPLA94T30H620P</codiceFiscale>
+        <id_libro>6</id_libro>
+        <inizio>2023-01-15</inizio>
+        <fine>2023-02-01</fine>
+    </prestito>
 </prestiti>

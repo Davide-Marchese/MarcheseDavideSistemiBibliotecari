@@ -70,12 +70,16 @@ public class ClientHandler extends Thread {
     public void searchByName(Element rootLibri, Element rootPrestiti, String libro) {
         NodeList listaLibri = rootLibri.getElementsByTagName("libro");
         NodeList listaPrestiti = rootPrestiti.getElementsByTagName("prestito");
+        int nCopie = 0;
         for (int i = 0; i < listaLibri.getLength(); i++) {
             Node titolo = ((Element) listaLibri.item(i)).getElementsByTagName("titolo").item(0);
+            if (nCopie == 2)
+                break;
             if (titolo.getTextContent()
                     .equalsIgnoreCase(libro)) {
                 String id = titolo.getParentNode().getAttributes().getNamedItem("id").getTextContent();
                 borrowings(listaPrestiti, id);
+                nCopie++;
             }
         }
         out.println("-");

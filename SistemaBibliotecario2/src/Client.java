@@ -19,7 +19,8 @@ public class Client {
         String prestito = "";
         while (!prestito.equals("-")) {
             prestito = in.readLine();
-            System.out.println(prestito);
+            if (!prestito.equals("-"))
+                System.out.println(prestito);
         }
     }
 }
